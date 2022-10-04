@@ -6,10 +6,10 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "eslint:recommended",
         "airbnb"
     ],
-    "overrides": [
-    ],
+    "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
@@ -18,5 +18,34 @@
         "react"
     ],
     "rules": {
+        "import/no-unresolved": "error",
+        "jsx-quotes": [
+            "error",
+            "prefer-double"
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "tabWidth": 4,
+                "ignoreComments": true,
+                "ignoreTrailingComments": true,
+                "ignoreUrls": true,
+                "ignoreRegExpLiterals": true
+            }
+        ],
+        "no-unused-vars": "warn",
+        "react/jsx-uses-vars": "warn",
+        "react/jsx-uses-react": "warn",
+        "no-trailing-spaces": "warn",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ]
     }
 }
