@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -21,9 +21,10 @@ const pageIcons = [<HomeOutlinedIcon />, <PodcastsOutlinedIcon />, <DescriptionO
 const settings = ['Admin', 'Alterar Senha', 'Parâmetros de configuração', 'Gerenciar TAGs', 'Sair'];
 
 export default function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
   const { setModalOpen } = useContext(TagsContext);
+  const [selectedMenu, setSelectedMenu] = useState('Home');
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -45,6 +46,11 @@ export default function Navbar() {
     handleCloseUserMenu();
   };
 
+  const handleClick = (menu) => {
+    setSelectedMenu(menu);
+    handleCloseUserMenu();
+  };
+
   const settingsActions = [
     handleCloseUserMenu,
     handleCloseUserMenu,
@@ -55,15 +61,18 @@ export default function Navbar() {
 
   return (
     <AppBar position="static" style={{ background: '#FAFAFA' }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+      <Container sx={{ minWidth: '100vw', margin: '0' }}>
+        <Toolbar
+          disableGutters
+          sx={{ minWidth: '100%' }}
+        >
           <Box
             component="img"
             sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
             alt="logo"
             src="/stattus4.png"
           />
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box aria-label="menu sandwich" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="dropdown"
@@ -99,18 +108,21 @@ export default function Navbar() {
               ))}
             </Menu>
           </Box>
-          {/* Breakpoint */}
           <Box
             component="img"
             sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
             alt="logo"
             src="/stattus4.png"
           />
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box
+            aria-label="menu horizontal"
+            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, margin: '0px 30px' }}
+          >
             {pages.map((page, i) => (
               <Button
+                variant={selectedMenu === page ? 'contained' : 'text'}
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => handleClick(page)}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 <Box sx={{ display: 'flex' }}>
@@ -120,7 +132,9 @@ export default function Navbar() {
               </Button>
             ))}
           </Box>
-
+          <Typography id="nome-cliente">
+            CLIENTE
+          </Typography>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

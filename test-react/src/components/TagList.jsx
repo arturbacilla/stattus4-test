@@ -28,6 +28,7 @@ function TagList({ tags }) {
       </Typography>
       <Box sx={{
         display: 'flex',
+        flexWrap: 'wrap',
       }}
       >
         { tags && tags.map((tag) => (
