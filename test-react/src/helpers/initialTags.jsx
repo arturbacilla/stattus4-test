@@ -1,7 +1,7 @@
 const initialTags = [
-  { name: 'GRANDE CONSUMIDOR', bgcolor: '#14008A', textcolor: 'white' },
-  { name: 'BAIXA PRESSÃO', bgcolor: '#FDDF38', textcolor: 'black' },
-  { name: 'PONTO SUSPEITO', bgcolor: '#FE0014', textcolor: 'white' },
+  { name: 'Grande Consumidor', bgcolor: '#14008A', textcolor: 'white' },
+  { name: 'Baixa Pressão', bgcolor: '#FDDF38', textcolor: 'black' },
+  { name: 'Ponto Suspeito', bgcolor: '#FE0014', textcolor: 'white' },
 ];
 
 export default initialTags;
