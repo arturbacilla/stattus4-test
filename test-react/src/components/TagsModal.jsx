@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import TagsContext from '../context/TagsContext';
-import { modalStyle, tagStyle } from '../helpers/muiStyles';
+import { modalStyle } from '../helpers/muiStyles';
+import TagList from './TagList';
+import AddTag from './AddTag';
 
 function TagsModal({ tags = [] }) {
-  const { modalOpen, setModalOpen } = useContext(TagsContext);
+  const {
+    modalOpen, setModalOpen,
+  } = useContext(TagsContext);
   const handleClose = () => setModalOpen(false);
 
   return (
@@ -20,46 +22,8 @@ function TagsModal({ tags = [] }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-          >
-            <Typography id="modal-modal-title" variant="h6" component="h5">
-              TAGs Criadas
-            </Typography>
-            <Box sx={{
-              display: 'flex',
-            }}
-            >
-              { tags && tags.map((tag) => (
-                <Box
-                  key={tag.name}
-                  sx={{
-                    backgroundColor: tag.bgcolor,
-                    ...tagStyle,
-                  }}
-                >
-                  <Typography
-                    id="tag"
-                    variant="button"
-                    align="center"
-                    sx={{
-                      color: tag.textcolor,
-                      display: 'inline-block',
-                      padding: '0px 10px',
-                      fontSize: '0.7rem',
-                      fontWeight: 'bolder',
-                      textAlign: 'center',
-                    }}
-                  >
-                    {tag.name}
-                  </Typography>
-                  <CloseOutlinedIcon sx={{ height: '60%', fontWeight: 'bolder' }} />
-                </Box>
-              ))}
-            </Box>
-          </Box>
+          <TagList tags={tags} />
+          <AddTag />
         </Box>
       </Modal>
     </div>
