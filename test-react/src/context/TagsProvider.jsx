@@ -5,13 +5,19 @@ import initialTags from '../helpers/initialTags';
 
 export default function TagsProvider({ children }) {
   const [currentTags, setCurrentTags] = useState([...initialTags]);
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
+  const [selectedTag, setSelectedTag] = useState('');
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const values = {
     currentTags,
     setCurrentTags,
     modalOpen,
     setModalOpen,
+    confirmationModalOpen,
+    setConfirmationModalOpen,
+    selectedTag,
+    setSelectedTag,
   };
   return (
     <main>

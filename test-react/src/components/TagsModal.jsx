@@ -6,6 +6,7 @@ import TagsContext from '../context/TagsContext';
 import { modalStyle } from '../helpers/muiStyles';
 import TagList from './TagList';
 import AddTag from './AddTag';
+import ConfirmationModal from './ConfirmationModal';
 
 function TagsModal({ tags = [] }) {
   const {
@@ -14,7 +15,7 @@ function TagsModal({ tags = [] }) {
   const handleClose = () => setModalOpen(false);
 
   return (
-    <div>
+    <>
       <Modal
         open={modalOpen}
         onClose={handleClose}
@@ -26,7 +27,8 @@ function TagsModal({ tags = [] }) {
           <AddTag />
         </Box>
       </Modal>
-    </div>
+      <ConfirmationModal />
+    </>
   );
 }
 

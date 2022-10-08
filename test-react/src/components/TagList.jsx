@@ -9,12 +9,13 @@ import TagsContext from '../context/TagsContext';
 
 function TagList({ tags }) {
   const {
-    currentTags, setCurrentTags,
+    setConfirmationModalOpen,
+    setSelectedTag,
   } = useContext(TagsContext);
 
-  const deleteTag = (tagname) => {
-    const newArray = currentTags.filter((tag) => tag.name !== tagname);
-    setCurrentTags(newArray);
+  const openDeleteModal = (tagname) => {
+    setSelectedTag(tagname);
+    setConfirmationModalOpen(true);
   };
 
   return (
@@ -57,7 +58,7 @@ function TagList({ tags }) {
             <IconButton
               size="small"
               aria-label="delete tag"
-              onClick={() => deleteTag(tag.name)}
+              onClick={() => openDeleteModal(tag.name)}
             >
               <CloseOutlinedIcon sx={{ fontSize: 'inherit', fontWeight: 'bolder' }} />
             </IconButton>
