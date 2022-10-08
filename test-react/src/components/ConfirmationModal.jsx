@@ -38,7 +38,7 @@ export default function ConfirmationModal() {
           <Button variant="contained" color="error" onClick={handleClose}>Cancelar</Button>
           <Button
             variant="contained"
-            color="success"
+            color="primary"
             onClick={() => deleteTag(selectedTag)}
           >
             Excluir
