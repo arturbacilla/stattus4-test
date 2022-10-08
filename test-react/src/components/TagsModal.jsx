@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import Typography from '@mui/material/Typography';
 import TagsContext from '../context/TagsContext';
 import { modalStyle } from '../helpers/muiStyles';
 import TagList from './TagList';
@@ -23,7 +24,12 @@ function TagsModal({ tags = [] }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <TagList tags={tags} />
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography id="modal-modal-title" variant="h6" component="h5">
+              TAGs Criadas
+            </Typography>
+            <TagList tags={tags} manage />
+          </Box>
           <AddTag />
         </Box>
       </Modal>
