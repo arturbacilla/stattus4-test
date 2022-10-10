@@ -10,6 +10,11 @@ function TagsOnFilter({ tag }) {
     setSelectedTag,
   } = useContext(TagsContext);
 
+  const toggleClick = (tagName) => {
+    if (selectedTag === tagName) return setSelectedTag('');
+    return setSelectedTag(tagName);
+  };
+
   const ColorButton = styled(Button)(({ theme }) => ({
     color: selectedTag === tag.name ? tag.textcolor : tag.bgcolor,
     backgroundColor: selectedTag === tag.name ? tag.bgcolor : 'white',
@@ -22,7 +27,7 @@ function TagsOnFilter({ tag }) {
   return (
     <ColorButton
       variant="outlined"
-      onClick={() => setSelectedTag(tag.name)}
+      onClick={() => toggleClick(tag.name)}
       sx={{ fontSize: '0.5rem', padding: '2px 10px' }}
     >
       {tag.name}

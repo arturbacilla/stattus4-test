@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import TagsContext from '../context/TagsContext';
-import newTagOptions from '../helpers/newTagOptions';
+import tagColorOptions from '../helpers/tagColorOptions';
 
 function AddTag() {
   const { currentTags, setCurrentTags } = useContext(TagsContext);
@@ -28,7 +28,7 @@ function AddTag() {
       setErrorMsg('Esse nome já existe.');
       return setIsError(true);
     }
-    return setCurrentTags([...currentTags, { name, ...newTagOptions[selectedColor] }]);
+    return setCurrentTags([...currentTags, { name, ...tagColorOptions[selectedColor] }]);
   };
 
   return (
@@ -55,7 +55,7 @@ function AddTag() {
         Selecione a cor:
       </Typography>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '80%' }}>
-        {newTagOptions.map((option, i) => (
+        {tagColorOptions.map((option, i) => (
           <Button
             key={`color-${option.bgcolor}`}
             variant="contained"
@@ -79,8 +79,8 @@ function AddTag() {
         variant="contained"
         sx={{
           alignSelf: 'flex-end',
-          backgroundColor: newTagOptions[selectedColor].bgcolor,
-          color: newTagOptions[selectedColor].textcolor,
+          backgroundColor: tagColorOptions[selectedColor].bgcolor,
+          color: tagColorOptions[selectedColor].textcolor,
         }}
         onClick={() => addTag(nameValue)}
       >
