@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import TagsContext from '../context/TagsContext';
-import { confirmationStyle } from '../helpers/muiStyles';
+import TagsContext from '../../context/TagsContext';
+import { confirmationStyle } from '../../helpers/muiStyles';
 
 export default function ConfirmationModal() {
   const {

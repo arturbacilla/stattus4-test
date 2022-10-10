@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
-import TagsContext from '../context/TagsContext';
-import { modalStyle } from '../helpers/muiStyles';
-import TagList from './TagList';
-import AddTag from './AddTag';
+import TagsContext from '../../context/TagsContext';
+import { modalStyle } from '../../helpers/muiStyles';
+import TagList from '../Tags/TagList';
+import AddTag from '../AddTag';
 import ConfirmationModal from './ConfirmationModal';
 
 function TagsModal({ tags = [] }) {

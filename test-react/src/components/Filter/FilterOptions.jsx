@@ -6,8 +6,8 @@ import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import TagList from './TagList';
-import TagsContext from '../context/TagsContext';
+import TagList from '../Tags/TagList';
+import TagsContext from '../../context/TagsContext';
 
 export default function FilterOptions() {
   const options = { year: 'numeric', month: 'numeric', day: 'numeric' };

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
-import TagsContext from '../context/TagsContext';
+import TagsContext from '../../context/TagsContext';
 
 function TagsOnFilter({ tag }) {
   const {

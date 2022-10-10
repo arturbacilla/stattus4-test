@@ -4,8 +4,8 @@ import IconButton from '@mui/material/IconButton';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import { tagStyle } from '../helpers/muiStyles';
-import TagsContext from '../context/TagsContext';
+import { tagStyle } from '../../helpers/muiStyles';
+import TagsContext from '../../context/TagsContext';
 
 function TagOnManage({ tag }) {
   const {

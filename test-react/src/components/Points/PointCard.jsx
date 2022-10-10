@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import { Typography } from '@mui/material';
-import TagOnPoint from './TagOnPoint';
-import TagsContext from '../context/TagsContext';
+import TagOnPoint from '../Tags/TagOnPoint';
+import TagsContext from '../../context/TagsContext';
 
 export default function PointCard({ point }) {
   const { currentTags } = useContext(TagsContext);
