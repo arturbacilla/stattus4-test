@@ -4,6 +4,7 @@ import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
 import Divider from '@mui/material/Divider';
 import FilterOptions from './FilterOptions';
+import PointsList from './PointsList';
 
 const drawerWidth = { lg: '14vw' };
 
@@ -21,7 +22,7 @@ export default function FilterTab() {
       <Box sx={{ overflow: 'auto', width: '100%' }}>
         <FilterOptions />
         <Divider />
-        {/* map <PointCard /> */}
+        <PointsList />
       </Box>
     </Drawer>
   );

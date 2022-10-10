@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import UserContext from './TagsContext';
+import TagsContext from './TagsContext';
 import initialTags from '../helpers/initialTags';
 
 export default function TagsProvider({ children }) {
@@ -21,9 +21,9 @@ export default function TagsProvider({ children }) {
   };
   return (
     <main>
-      <UserContext.Provider value={values}>
+      <TagsContext.Provider value={values}>
         { children }
-      </UserContext.Provider>
+      </TagsContext.Provider>
     </main>
   );
 }

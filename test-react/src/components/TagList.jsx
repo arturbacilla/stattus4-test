@@ -11,11 +11,11 @@ function TagList({ tags, manage }) {
       flexWrap: 'wrap',
       width: '95%',
       gap: manage ? '10px' : '5px',
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
     }}
     >
       { tags && tags.map((tag) => (
-        manage ? <TagOnManage tag={tag} /> : <TagOnFilter tag={tag} />
+        manage ? <TagOnManage key={tag.name} tag={tag} /> : <TagOnFilter key={tag.name} tag={tag} />
       ))}
     </Box>
   );

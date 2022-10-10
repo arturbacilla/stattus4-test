@@ -53,7 +53,7 @@ export default function FilterOptions() {
         />
         <FormControlLabel value="tag" control={<Radio size="small" />} label="TAG" />
       </RadioGroup>
-      { selectedFilter === 'tag' ? <TagList tags={currentTags} /> : null}
+      { selectedFilter === 'tag' ? <TagList tags={currentTags} manage={false} /> : null}
     </Box>
   );
 }
