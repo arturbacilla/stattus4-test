@@ -9,6 +9,9 @@ function TagList({ tags, manage }) {
     <Box sx={{
       display: 'flex',
       flexWrap: 'wrap',
+      width: '95%',
+      gap: manage ? '10px' : '5px',
+      justifyContent: 'center',
     }}
     >
       { tags && tags.map((tag) => (

@@ -10,7 +10,10 @@ export default function ConfirmationModal() {
   const {
     currentTags,
     setCurrentTags,
-    confirmationModalOpen, setConfirmationModalOpen, selectedTag,
+    confirmationModalOpen,
+    setConfirmationModalOpen,
+    selectedTag,
+    setSelectedTag,
   } = useContext(TagsContext);
   const handleClose = () => setConfirmationModalOpen(false);
 
@@ -18,6 +21,7 @@ export default function ConfirmationModal() {
     const newArray = currentTags.filter((tag) => tag.name !== tagname);
     setCurrentTags(newArray);
     handleClose();
+    setSelectedTag('');
   };
 
   return (

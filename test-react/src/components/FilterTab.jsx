@@ -1,12 +1,28 @@
 import React from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Toolbar from '@mui/material/Toolbar';
+import Divider from '@mui/material/Divider';
+import FilterOptions from './FilterOptions';
+
+const drawerWidth = { lg: '14vw' };
 
 export default function FilterTab() {
   return (
-    <div>FilterTab</div>
+    <Drawer
+      variant="permanent"
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box' },
+      }}
+    >
+      <Toolbar sx={{ height: { lg: '12vh', xl: '8vh' } }} />
+      <Box sx={{ overflow: 'auto', width: '100%' }}>
+        <FilterOptions />
+        <Divider />
+        {/* map <PointCard /> */}
+      </Box>
+    </Drawer>
   );
 }

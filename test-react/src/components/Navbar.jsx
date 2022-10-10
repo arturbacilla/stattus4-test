@@ -60,7 +60,14 @@ export default function Navbar() {
   ];
 
   return (
-    <AppBar position="static" style={{ background: '#FAFAFA' }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        maxHeight: { lg: '12vh', xl: '8vh' },
+        background: '#FAFAFA',
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+      }}
+    >
       <Container sx={{ minWidth: '100vw', margin: '0' }}>
         <Toolbar
           disableGutters
@@ -68,7 +75,7 @@ export default function Navbar() {
         >
           <Box
             component="img"
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, width: { lg: '10%', xl: '8%' } }}
             alt="logo"
             src="/stattus4.png"
           />
@@ -116,7 +123,9 @@ export default function Navbar() {
           />
           <Box
             aria-label="menu horizontal"
-            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, margin: '0px 30px' }}
+            sx={{
+              flexGrow: 1, display: { xs: 'none', md: 'flex' }, margin: '0px 40px', gap: '30px',
+            }}
           >
             {pages.map((page, i) => (
               <Button

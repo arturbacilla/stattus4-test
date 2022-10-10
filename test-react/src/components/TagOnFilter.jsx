@@ -20,7 +20,11 @@ function TagsOnFilter({ tag }) {
   }));
 
   return (
-    <ColorButton variant="outlined" onClick={() => setSelectedTag(tag.name)}>
+    <ColorButton
+      variant="outlined"
+      onClick={() => setSelectedTag(tag.name)}
+      sx={{ fontSize: '0.5rem', padding: '2px 10px' }}
+    >
       {tag.name}
     </ColorButton>
   );

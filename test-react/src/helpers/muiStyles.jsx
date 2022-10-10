@@ -1,7 +1,6 @@
 export const tagStyle = {
   display: 'flex',
   alignItems: 'center',
-  margin: '5px',
   border: '1px solid #666',
   borderRadius: '4px',
 };
